@@ -1,0 +1,245 @@
+*{
+    padding: 0%;
+    outline: none;
+    margin: 0%;
+    border: 0%;
+    box-sizing: border-box;
+    list-style: none;
+   
+   
+}
+body{
+   
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #1d1d1d;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    
+    
+    
+  
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.sidebar{
+    width: 100px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-color: rgba(10, 10, 10, 0.65);
+    box-shadow: 0 8px 32px rgb(2,4,24);
+    border-right: 2px solid rgba(255,255,255,.09);
+    transition: .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    position:fixed;
+    z-index: 2;
+    
+}
+.sidebar.open{
+     width: 200px;
+
+}
+.sidebar .logo{
+    width: 100%;
+    height: 240px;
+    padding: 40px 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.sidebar .logo img 
+{
+width: 90px;
+transition: .4s;
+border-radius: 60px;
+}
+.sidebar.open .logo img {
+    width: 150px;
+    border-radius:0;
+
+}
+.sidebar .logo h3{
+    color: #fff;
+    font-size: 36px;
+    margin-top: 12px;
+    font-variant: small-caps;
+    pointer-events: none;
+    scale: 0;
+    opacity: 0;
+}
+.sidebar.open .logo h3{
+    scale: 1;
+    opacity: 1;
+    transition: .4s;
+    transition-delay:.2s ;
+}
+
+
+.sidebar .nav-title{
+    color: #dadada;
+    margin:40px 0 18px ;
+    pointer-events: none;
+    opacity: 0;
+}
+.sidebar.open .nav-title{
+    opacity: 1;
+    transition: .4s;
+    transition-delay:.2s
+
+}
+
+
+.sidebar nav .nav-item.active{
+    background: #ff328e !important;
+}
+.sidebar nav .nav-item:hover{
+    background: rgba(255,255,255,.1);
+
+
+
+}
+.sidebar nav .nav-item{
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    padding: 0 16px;
+    margin :30px 0;
+    color: #fff;
+    transition: .3s;
+    margin-bottom: 35px;
+    
+   
+}
+.sidebar nav .nav-item span{
+     font-size: 20px;
+     margin-left: 8px;
+     pointer-events: none;
+     opacity: 0;
+}
+.sidebar.open nav .nav-item span{
+    opacity: 1;
+    pointer-events: visible;
+    transition: .4s;
+    transition-delay:.2s
+
+}
+.sidebar hr{
+    width: 100%;
+    height: .5px;
+    border-radius: 3px;
+    margin: 15px 0 0px;
+    background: rgb(255,255,255,.1);
+    opacity: 0;
+}
+.sidebar.open hr{
+    opacity: 1;
+    transition: .4s;
+
+}
+.sidebar .toggle{
+    cursor: pointer;
+    position: absolute;
+    color: #fff;
+    top: 180px;
+    right: -20px;
+    font-size: 30px;
+    line-height: 50%;
+    text-align: center;
+    border-radius :50%;
+    padding: 2px 0 2px 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 100%,
+        rgba(10,10,10,.65)100%
+    );
+}
+.sidebar.open .toggle{
+    transform:translateY(45px) ;
+}
+.sidebar.open .toggle i {
+    transition: .4s linear;
+}
+.sidebar.open .toggle i {
+    transform: rotateY(180deg);
+}
+.bx{
+    scale: 2;
+    margin-left:25px;
+    transition: .5s;
+}
+.open .bx{ 
+    scale: 1.2;
+    margin-left: 0;
+    transition: .5s;
+
+}
+.home{
+   
+    width: 91.6%;
+    height: 100%;
+    margin-left:120px;
+    position:absolute;
+    
+    display: flex;
+    flex-direction: row-reverse
+}
+
+body{ margin: 0;}
+.background-slide-container{
+  position: relative;
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1E1F23;
+}
+.background-slide{
+   
+  position: absolute;
+  height: 400%;
+  width: 400%;
+  top: -80%;
+  left: -100%;
+  background-size:14%;
+  background-image: url(/assets/background/bgmain3.png);
+   }
+.scroll-bg{
+   
+    -webkit-animation-name: scrollSmall;
+    animation-name: scrollSmall;
+    -webkit-animation-duration: 5000s;
+    animation-duration: 50s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes scrollSmall{
+  0%{
+    transform:rotate(-13deg) 
+    translateY(0)
+  }
+  to{
+    transform:rotate(-13deg)
+    translateY(-639px)
+  }
+}
+@keyframes scrollSmall{
+  0%{
+    transform:rotate(-13deg)
+    translateY(0)
+  }
+  to{
+    transform:rotate(-13deg)
+    translateY(-639px)
+  }
+}
